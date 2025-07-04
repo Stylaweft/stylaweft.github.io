@@ -1,46 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:ital,wght@1,300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  background: #0e0e0e;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Playfair Display', serif;
   overflow: hidden;
-}
-
-.hero {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  background-color: black;
 }
 
-.glow-background {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(224, 201, 127, 0.2) 0%, transparent 70%);
-  animation: glow 10s linear infinite;
+.slideshow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   z-index: 0;
 }
 
-.text-content {
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 18s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 6s; }
+.slide:nth-child(3) { animation-delay: 12s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.overlay {
+  position: relative;
   z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  backdrop-filter: brightness(0.4);
 }
 
 h1 {
   font-size: 5rem;
   color: #fff;
   letter-spacing: 3px;
-  text-shadow: 0 0 20px #e0c97f, 0 0 40px #e0c97f55;
+  text-shadow: 0 0 20px #e0c97f, 0 0 40px #e0c97f88;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: 'Raleway', sans-serif;
   color: #e0c97f;
   margin-top: 1rem;
   text-shadow: 0 0 10px #e0c97f88;
+  font-weight: 300;
 }
 
 .fade-in {
@@ -58,9 +87,4 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes glow {
-  0% { transform: rotate(0deg) scale(1); }
-  100% { transform: rotate(360deg) scale(1.2); }
 }
