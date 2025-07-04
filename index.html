@@ -7,19 +7,23 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:ital,wght@1,300&display=swap');
 
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       font-family: 'Playfair Display', serif;
-      overflow: hidden;
       height: 100vh;
+      overflow: hidden;
       background-color: black;
     }
 
     .slideshow {
       position: fixed;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       top: 0;
       left: 0;
       z-index: 0;
@@ -29,7 +33,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
       background-position: center;
       opacity: 0;
       animation: slideShow 18s infinite;
@@ -57,26 +62,24 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      backdrop-filter: brightness(0.4);
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     h1 {
-      font-size: 5rem;
+      font-size: clamp(2rem, 5vw, 4rem);
       color: #fff;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-shadow: 0 0 20px #e0c97f, 0 0 40px #e0c97f88;
       margin: 0;
-      font-family: 'Playfair Display', serif;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.5rem);
       font-style: italic;
       font-family: 'Raleway', sans-serif;
       color: #e0c97f;
       margin-top: 1rem;
       text-shadow: 0 0 10px #e0c97f88;
-      font-weight: 300;
     }
 
     .fade-in {
