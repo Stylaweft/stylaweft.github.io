@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-background {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(224, 201, 127, 0.2) 0%, transparent 70%);
+  animation: glow 10s linear infinite;
+  z-index: 0;
+}
+
+.text-content {
+  z-index: 1;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #fff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #e0c97f, 0 0 40px #e0c97f55;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #e0c97f;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px #e0c97f88;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 2s ease forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.2); }
+}
