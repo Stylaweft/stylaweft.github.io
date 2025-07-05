@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stylaweft — Fashion Redefined</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Raleway&display=swap" rel="stylesheet">
+  <title>Stylaweft — Dimension of Luxury Wear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Italianno&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,53 +14,80 @@
 
     html, body {
       height: 100%;
-      font-family: 'Raleway', sans-serif;
       overflow: hidden;
+      font-family: 'Cinzel', serif;
     }
 
     body {
-      background: linear-gradient(-45deg, #1b1b2f, #3a0ca3, #7209b7, #4361ee);
-      background-size: 300% 300%;
-      animation: gradientMove 20s ease infinite;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #f4f4f4;
       text-align: center;
-      padding: 2rem;
+      color: white;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .bg-slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bg-slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .bg-slideshow img.active {
+      opacity: 1;
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
       font-size: 4rem;
+      background: linear-gradient(90deg, #d4af37, #f5d6ba);
       color: transparent;
-      background: linear-gradient(90deg, #f5d6ba, #d4af37, #ffd700);
-      background-clip: text;
       -webkit-background-clip: text;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-      letter-spacing: 2px;
+      background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      letter-spacing: 4px;
     }
 
     p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      max-width: 700px;
-      color: #e0e0e0;
-      font-family: 'Raleway', sans-serif;
-      line-height: 1.5;
+      font-family: 'Italianno', cursive;
+      font-size: 2.2rem;
+      color: #f0e6dc;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div>
     <h1>STYLAWEFT</h1>
-    <p>Where every thread tells your story — handcrafted elegance, personalized for your statement. Discover a new dimension of luxury wear.</p>
+    <p>Dimension of Luxury Wear</p>
   </div>
+
+  <div class="bg-slideshow">
+    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?auto=format&fit=crop&w=1920&q=80" class="active" />
+    <img src="https://images.unsplash.com/photo-1593032457869-ec60b99e70b3?auto=format&fit=crop&w=1920&q=80" />
+    <img src="https://images.unsplash.com/photo-1600180758890-a1c97efbf6b9?auto=format&fit=crop&w=1920&q=80" />
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.bg-slideshow img');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
