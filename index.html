@@ -15,25 +15,25 @@
       background-color: black;
     }
 
-    body::before {
-      content: "";
+    .background {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('bg.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
       z-index: -1;
+      background: url('bg.png') no-repeat center center;
+      background-size: cover;
+      animation: zoomPan 20s ease-in-out infinite alternate;
+      opacity: 0.9;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
+    @keyframes zoomPan {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.05) translate(-1%, -1%);
       }
     }
 
@@ -47,18 +47,19 @@
       flex-direction: column;
       text-align: center;
       color: white;
+      padding: 2rem;
     }
 
     h1 {
       font-size: 4rem;
       text-shadow: 0 0 20px #fff, 0 0 40px #d4af37;
+      margin-bottom: 10px;
     }
 
     p {
       font-family: 'Italianno', cursive;
       font-size: 2rem;
       color: #d4af37;
-      margin-top: 10px;
     }
 
     @media (max-width: 600px) {
@@ -68,6 +69,7 @@
   </style>
 </head>
 <body>
+  <div class="background"></div>
   <div class="content">
     <h1>Stylaweft</h1>
     <p>Dimension of Luxury Wear</p>
