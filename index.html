@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stylaweft — Dimension of Luxury Wear</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Italianno&display=swap" rel="stylesheet">
+  <title>Stylaweft — Where Style Weaves Luxury</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Italianno&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,16 +15,9 @@
     html, body {
       height: 100%;
       overflow: hidden;
-      font-family: 'Cinzel', serif;
-    }
-
-    body {
+      font-family: 'Playfair Display', serif;
+      background-color: black;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
     }
 
     .bg-slideshow {
@@ -49,35 +42,43 @@
       opacity: 1;
     }
 
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
     h1 {
-      font-size: 4rem;
-      background: linear-gradient(90deg, #d4af37, #f5d6ba);
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #fff2cc, #d4af37, #fff);
       color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
       letter-spacing: 4px;
     }
 
     p {
       font-family: 'Italianno', cursive;
-      font-size: 2.2rem;
-      color: #f0e6dc;
-      margin-top: 10px;
+      font-size: 2rem;
+      color: #f5f0e1;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>STYLAWEFT</h1>
-    <p>Dimension of Luxury Wear</p>
+  <div class="bg-slideshow">
+    <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-pmYhcmj7KDk2j3X9nQ02ivVn/user-1rM0fopA1hjUM1JYQ9z6vDwk/img-8iNCpYtsPOQJrAWInoDgu2On.png?st=2025-07-05T17%3A44%3A12Z&se=2025-07-05T19%3A44%3A12Z&sp=r&sv=2021-08-06&sr=b&sig=aM43Gm3azHlEMQis0imMwQ8EtJ5nXztWlADAFktUzqY%3D" class="active">
+    <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-pmYhcmj7KDk2j3X9nQ02ivVn/user-1rM0fopA1hjUM1JYQ9z6vDwk/img-7Wx2EAw49KtYhbcLKaEZ8nGR.png?st=2025-07-05T17%3A44%3A12Z&se=2025-07-05T19%3A44%3A12Z&sp=r&sv=2021-08-06&sr=b&sig=4cC7xB4xW%2BAIEbcl6HfqI7UenKzKAKaxep1cXJL1KZ4%3D">
+    <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-pmYhcmj7KDk2j3X9nQ02ivVn/user-1rM0fopA1hjUM1JYQ9z6vDwk/img-1zGC4YJ2GEkBAmsVEtQrxmWl.png?st=2025-07-05T17%3A44%3A12Z&se=2025-07-05T19%3A44%3A12Z&sp=r&sv=2021-08-06&sr=b&sig=0Yc%2F5UvwGXTQnrsjXPvpeVXkpiYzq%2BcGGEC1PH03CC8%3D">
   </div>
 
-  <div class="bg-slideshow">
-    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?auto=format&fit=crop&w=1920&q=80" class="active" />
-    <img src="https://images.unsplash.com/photo-1593032457869-ec60b99e70b3?auto=format&fit=crop&w=1920&q=80" />
-    <img src="https://images.unsplash.com/photo-1600180758890-a1c97efbf6b9?auto=format&fit=crop&w=1920&q=80" />
-  </div>
+  <h1>Stylaweft</h1>
+  <p>Where Style Weaves Luxury</p>
 
   <script>
     const slides = document.querySelectorAll('.bg-slideshow img');
